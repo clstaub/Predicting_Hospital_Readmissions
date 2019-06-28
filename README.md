@@ -17,14 +17,14 @@ This has still proven to be a difficult task but hospitals are employing a numbe
 
 ## Data Overview
 
-The data set was made available by the UCI Machine Learning Repository and can be found [here](https://archive.ics.uci.edu/ml/datasets/diabetes+130-us+hospitals+for+years+1999-2008).
+The data set was made available by Virgina Commonwealth University via the UCI Machine Learning Repository and can be found [here](https://archive.ics.uci.edu/ml/datasets/diabetes+130-us+hospitals+for+years+1999-2008).
 
 - It contains 101766 observations with 50 different features. 
 - Features are largely categorical variables
 
 #### Main feature categories:
 - Basic demographics: Encounter ID, Patient #, Race, Gender, Age, Weight
-- Medical Hx: Medications, # of Procedures, # Medications, ************ to be continued
+- Medical Hx: Medications, # of Procedures, # Medications, 
 
 
 ## Data Preprocessing
@@ -40,6 +40,27 @@ The metric of concern according to the HRRP is patients that were readmitted in 
 Below is the proportion of patients in the dataset that were readmitted. 
 
 <img src="img/target.png">
+
+Taking a cursory glance at the data showed that a '?' was used where values were unknown. To address this, we will replace all '?' with np.nan. This will paint a more honest picture of any missing values. 
+
+- Column 'weight' is missing 96.86% of data
+- Column 'payer_code' is missing 39.56% of data
+- Column 'medical_specialty' is missing 49.08% of data
+
+**What do we do with the columns containing missing data?**
+
+- Since weight is missing ~97% of data, we will drop the column. It would have been a nice feature to evaluate. 
+- Additionally, payer_code and medical_specialty are missing ~40 and ~50 % of data respectively. Although there are other ways to deal with this, we will remove the columns. 
+
+A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
+
+Since 'examide' and 'citoglipton' only contain one unique value, we will drop these two features from the data frame. 
+
+Another column that needed cleaning was the **discharge_disposition_id** column. This column along with **admission_type_id** and **admission_source_id** all contained numerical values. These numeric values only served as identifiers and didn't actually have any ordered meaning. The id translations were provided in a separate csv file 'IDs_mapping.csv'.  
+
+Reviewing admission_type_id table there seem to be some redundancies in the unique values. We can group some of these together to simplify interpretability when we get to Modeling as these could be important features. Will consolidate 'Urgent' and 'Trauma Center' with 'Emergency'. Will also combine 'Not Mapped' and 'NaN' into 'Not Available'.
+
+Similar logic can be applied to the discharge_disposition_id as well as the admission_source_id
 
 ## Exploratory Data Analysis
 It is worth exploring if any of the numeric variables have any correlations. We will write a function to exract numeric columns from a data frame of choice and return a numeric data frame. This will be performed for both the 
