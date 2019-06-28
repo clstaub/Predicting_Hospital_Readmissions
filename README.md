@@ -46,9 +46,9 @@ It is worth exploring if any of the numeric variables have any correlations. We 
 
 <img src='img/pair_plot.png'>
 
-Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations. 
+Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations. The columns with integer values did not provide a lot of insight. These int columns are largely nominal and interval variables which explains their lack of fruitful information in the pairplots generated above. 
 
-The columns with integer values did not provide a lot of insight. These int columns are largely nominal and interval variables which explains their lack of fruitful information in the pairplots generated above. A good next step would be to evaluate all the values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
+A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
 
 
 
