@@ -39,12 +39,14 @@ The metric of concern according to the HRRP is patients that were readmitted in 
 
 Below is the proportion of patients in the dataset that were readmitted. 
 
-<img src="img/target.png">,
+<img src="img/target.png">
 
 ## Exploratory Data Analysis
 It is worth exploring if any of the numeric variables have any correlations. We will write a function to exract numeric columns from a data frame of choice and return a numeric data frame. This will be performed for both the 
 
-Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations.  ;(
+<img src='img/pair_plot.png'>
+
+Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations. 
 
 The columns with integer values did not provide a lot of insight. These int columns are largely nominal and interval variables which explains their lack of fruitful information in the pairplots generated above. A good next step would be to evaluate all the values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
 
