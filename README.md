@@ -62,6 +62,11 @@ Reviewing admission_type_id table there seem to be some redundancies in the uniq
 
 Similar logic can be applied to the discharge_disposition_id as well as the admission_source_id
 
+Furthermore, there are some observations with discharge_disposition_id that will need to be removed from the main df altogether. After consideration, we will remove records that have a discharge_disposition_id that pertains to a patient that has expired or was discharged and transferred to hospice care--reason being that they shouldn't be counted in the group that wasn't readmitted as this would misrepresent that population.
+
+Based on these criteria, we will remove records where
+discharge_disposition_id = 11,13,14,18,19,20,21
+
 ## Exploratory Data Analysis
 It is worth exploring if any of the numeric variables have any correlations. We will write a function to exract numeric columns from a data frame of choice and return a numeric data frame. This will be performed for both the 
 
