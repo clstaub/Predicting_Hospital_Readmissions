@@ -117,4 +117,5 @@ Let's test the change in medication column and the readmission column for indepe
 A Chi-Squared test result of 38.5 with 1 degree of freedom yields a p-value of 5.37 * e-10, which means reject the Null Hypothesis. Changes in medicine and hospital readmissions are not independent. Further Post-Hoc Analysis can be performed. 
 
 ## Feature Engineering
-Due to the imbalanced nature of this data set, w
+Due to the imbalanced nature of this data set, we will need to implement some oversampling or undersampling techniques. A tried and tested method is Synthetic Minority Oversampling Technique (SMOTE).  This technique draws lines between the existing minority cluster via KNN and generates data points on those lines until the dataset is balanced. 
+An example of an undersampling technique is NearMiss. This technique undersamples the majority class so that the two classes are equal in size. The trade-off with this is the potential loss of data but we reduce the risk of overfitting our model to the data. 
