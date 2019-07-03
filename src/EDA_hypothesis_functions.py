@@ -69,7 +69,7 @@ def get_cat_cols(df):
 def chisq(df):
     '''
     Description: Performs Chi-Square test on the categorical columns vs target variable return Chi-squared test score, p-value, and degrees of freedom
-    Input: Pandas Dataframe, list of categorical columns
+    Input: Pandas Dataframe
     Output: Column_name, Chi_sq test score, p-value, degrees of freedom'''
     results = [['column_name', 'X^2_score', 'p-value', 'df']]
     for col in df.columns:

@@ -80,8 +80,12 @@ Extraction of numeric columns and plotting in a pairplot did not yield any stron
 We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
 
 <img src='img/inpatient_visits.png'>
-
-
+<img src='img/hospital_days.png'>
+<img src='img/lab_procedures.png'>
+<img src='img/procedures.png'>
+<img src='img/num_meds.png'>
+<img src='img/outpatient.png'>
+<img src='img/ER.png'>
 
 Reviewing the histograms, we can not appreciate any predictive power in these variables. 
 
@@ -93,7 +97,7 @@ Since the columns in this dataset are largely categorical variables, we want to 
 
 As there are various mechanisms of action by which diabetes medication can treat the disease, there are many medications on the market. This can be seen by the 23 various diabetes medications that are included in this data set. Finding the optimal medication for each patient can often be an exercise of trial and error. Adverse side-effects secondary to a medication change often result in hospitalization as patients need to be monitored with serial blood glucose tests. 
 
-I'd like to test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward X^2 test
+I'd like to test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward Chi-Squared test. 
 
 #### State Null and Alternative Hypothesis
 
@@ -110,4 +114,6 @@ I'd like to test the change in medication column and the readmission column for 
 - The value of expected cells should be greater than 5 for at least 20% of the cells
 
 Credit to [this](https://pythonfordatascience.org/chi-square-test-of-independence-python/) medium article
+
+#### Results
 
