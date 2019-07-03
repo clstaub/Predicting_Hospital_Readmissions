@@ -97,7 +97,7 @@ Since the columns in this dataset are largely categorical variables, we want to 
 
 As there are various mechanisms of action by which diabetes medication can treat the disease, there are many medications on the market. This can be seen by the 23 various diabetes medications that are included in this data set. Finding the optimal medication for each patient can often be an exercise of trial and error. Adverse side-effects secondary to a medication change often result in hospitalization as patients need to be monitored with serial blood glucose tests. 
 
-I'd like to test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward Chi-Squared test. 
+Let's test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward Chi-Squared test. 
 
 #### State Null and Alternative Hypothesis
 
@@ -117,5 +117,4 @@ I'd like to test the change in medication column and the readmission column for 
 A Chi-Squared test result of 38.5 with 1 degree of freedom yields a p-value of 5.37 * e-10, which means reject the Null Hypothesis. Changes in medicine and hospital readmissions are not independent. Further Post-Hoc Analysis can be performed. 
 
 ## Feature Engineering
-
-
+Due to the imbalanced nature of this data set, w
