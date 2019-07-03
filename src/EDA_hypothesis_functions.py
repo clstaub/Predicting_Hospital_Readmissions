@@ -59,21 +59,21 @@ def get_cat_cols(df):
     intlist=[]
     for col in df.columns:
         for val in df[col]:
-            if type(val) == str:
+            if type(val) == str or type(val) == bool:
                 intlist.append(col)
                 break
     return pd.DataFrame(df[intlist])
 
 
 
-def chisq(df,cols):
+def chisq(df):
     '''
     Description: Performs Chi-Square test on the categorical columns vs target variable return Chi-squared test score, p-value, and degrees of freedom
     Input: Pandas Dataframe, list of categorical columns
     Output: Column_name, Chi_sq test score, p-value, degrees of freedom'''
-    results = []
-    for col in cols:
-        crosstab = pd.crosstab(df[col],df['readmitted_<30d'])
+    results = [['column_name', 'X^2_score', 'p-value', 'df']]
+    for col in df.columns:
+        crosstab = pd.crosstab(df[col],df['readmit'])
         result = stats.chi2_contingency(crosstab)
-        results.append(col, result[0], result[1], result[2])
+        results.append([col, result[0], result[1], result[2]])
     return results

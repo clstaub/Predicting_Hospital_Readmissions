@@ -37,7 +37,10 @@ The metric of interest that labels whether a patient was readmitted or not has t
 
 The metric of concern according to the HRRP is patients that were readmitted in less than thirty days. Therefore we will rename the column to 'readmitted_<30d' and combine the '>30' and 'NO'.
 
-Below is the proportion of patients in the dataset that were readmitted. 
+Below is the proportion of patients in the dataset that were readmitted. The key take-away here is that we are dealing with an imbalanced data set. This will need to be take into account later when we start working on the predictive model. Options to work around this include the following which will be discussed in more detail and demonstrated later. 
+- Synthetically oversampling the minority class (SMOTE)
+- Undersampling the majority class 
+
 
 <img src="img/target.png">
 
@@ -72,14 +75,20 @@ It is worth exploring if any of the numeric variables have any correlations. We 
 
 <img src='img/pair_plot.png'>
 
-Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations. The columns with integer values did not provide a lot of insight. These int columns are largely nominal and interval variables which explains their lack of fruitful information in the pairplots generated above. 
+Extraction of numeric columns and plotting in a pairplot did not yield any strong correlations. The columns with integer values did not provide a lot of insight. 
+
+We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
+
+<img src='img/inpatient_visits.png'>
+<img src='img/hospital_days.png'>
+<img src='img/lab_procedures.png'>
+<img src='img/procedures.png'>
+<img src='img/num_meds.png'>
+<img src='img/outpatient.png'>
 
 A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
 
-
-
 ## Hypothesis Testing
-
 
 Since the columns in this dataset are largely categorical variables, we want to test some of these for indepence. 
 
