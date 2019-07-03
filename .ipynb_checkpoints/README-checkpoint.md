@@ -80,11 +80,18 @@ Extraction of numeric columns and plotting in a pairplot did not yield any stron
 We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
 
 <img src='img/inpatient_visits.png'>
+
 <img src='img/hospital_days.png'>
+
 <img src='img/lab_procedures.png'>
+
 <img src='img/procedures.png'>
+
 <img src='img/num_meds.png'>
+
 <img src='img/outpatient.png'>
+
+Reviewing the histograms, we can not appreciate any predictive power in these variables. 
 
 A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
 
