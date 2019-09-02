@@ -1,6 +1,8 @@
 # Predicting_Hospital_Readmissions
 ### Claudio Staub
 
+##### Table of Contents
+[Feature Engineering](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
 
 ## Introduction
 With estimated costs in the order of tens of billions per annum, hospital readmissions impose a significant financial burden on health care institutions across the nation. Up until more recent times, there was not a lot of incentive for Hospitals to reduce these readmissions. When Center for Medicares and Medicaid Services began public reporting hospital readmission rates, the ethical and professional incentive was there, but hospitals that aimed to reduce readmissions were losing revenue unless they could fill their beds. Enter the Hospital Readmissions Reduction Program (HRRP) circa 2013 which provided financial incentive for Hospitals to reduce readmissions. 
