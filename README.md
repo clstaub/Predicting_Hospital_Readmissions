@@ -1,10 +1,19 @@
-# Predicting_Hospital_Readmissions
+### Predicting_Hospital_Readmissions
 by Claudio Staub
 
-##### Table of Contents
-    - [Feature Engineering](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
+## Table of Contents
+
+- [Introduction](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#introduction)
+- [Strategy](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#strategy)
+- [Data Overview](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#data-overview)
+- [Data Preprocessing](https://ithub.com/clstaub/Predicting_Hospital_Readmissions#data-preprocessing)
+- [Exploratory Data Analysis](https://github.com/clstaub/Predicting_Hospital_Readmissions#exploratory-data-analysis)
+- [Feature Engineering](https://github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
+- [Model Selection](https://github.com/clstaub/Predicting_Hospital_Readmissions#model-selection)
+- [Conclusion and Next Steps](https://github.com/clstaub/Predicting_Hospital_Readmissions#conclusion-and-next-steps)
 
 ## Introduction
+
 With estimated costs in the order of tens of billions per annum, hospital readmissions impose a significant financial burden on health care institutions across the nation. Up until more recent times, there was not a lot of incentive for Hospitals to reduce these readmissions. When Center for Medicares and Medicaid Services began public reporting hospital readmission rates, the ethical and professional incentive was there, but hospitals that aimed to reduce readmissions were losing revenue unless they could fill their beds. Enter the Hospital Readmissions Reduction Program (HRRP) circa 2013 which provided financial incentive for Hospitals to reduce readmissions. 
 
 This has still proven to be a difficult task but hospitals are employing a number of strategies to reduce the preventable readmissions. Progress has been made since the implementation of the HRRP but estimates of readmissions that could have been prevented are still as high as 70%. It is therefore in their best interest to find ways to further reduce this undesirable outcome. 
@@ -116,3 +125,15 @@ A Chi-Squared test result of 38.5 with 1 degree of freedom yields a p-value of 5
 ## Feature Engineering
 Due to the imbalanced nature of this data set, we will need to implement some oversampling or undersampling techniques. A tried and tested method is Synthetic Minority Oversampling Technique (SMOTE).  This technique draws lines between the existing minority cluster via KNN and generates data points on those lines until the dataset is balanced. 
 An example of an undersampling technique is NearMiss. This technique undersamples the majority class so that the two classes are equal in size. The trade-off with this is the potential loss of data but we reduce the risk of overfitting our model to the data. 
+
+## Model Selection
+
+
+
+
+
+
+
+
+
+## Conclusions and Next Steps
