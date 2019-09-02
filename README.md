@@ -1,4 +1,4 @@
-### Predicting_Hospital_Readmissions
+# Predicting_Hospital_Readmissions
 by Claudio Staub
 
 ## Table of Contents
