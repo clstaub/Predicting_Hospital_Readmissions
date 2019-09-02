@@ -3,9 +3,9 @@ by Claudio Staub
 
 ## Table of Contents
 
-- [Introduction](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#introduction)
-- [Strategy](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#strategy)
-- [Data Overview](https://www.github.com/clstaub/Predicting_Hospital_Readmissions#data-overview)
+- [Introduction](https://github.com/clstaub/Predicting_Hospital_Readmissions#introduction)
+- [Strategy](https://github.com/clstaub/Predicting_Hospital_Readmissions#strategy)
+- [Data Overview](https://github.com/clstaub/Predicting_Hospital_Readmissions#data-overview)
 - [Data Preprocessing](https://ithub.com/clstaub/Predicting_Hospital_Readmissions#data-preprocessing)
 - [Exploratory Data Analysis](https://github.com/clstaub/Predicting_Hospital_Readmissions#exploratory-data-analysis)
 - [Feature Engineering](https://github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
