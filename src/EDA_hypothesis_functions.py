@@ -29,7 +29,7 @@ def missing_data(df,percent):
 
 
 
-# createa a data frame of int features.. 
+# createa a data frame of int features
 def get_num_cols(df):
     '''
     Description: Takes a dataframe as it's input and returns a Pandas
