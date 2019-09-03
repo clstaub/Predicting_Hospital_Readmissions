@@ -1,4 +1,4 @@
-# Predicting_Hospital_Readmissions
+# Predicting Hospital Readmissions
 by Claudio Staub
 
 ## Table of Contents
@@ -6,7 +6,7 @@ by Claudio Staub
 - [Introduction](https://github.com/clstaub/Predicting_Hospital_Readmissions#introduction)
 - [Strategy](https://github.com/clstaub/Predicting_Hospital_Readmissions#strategy)
 - [Data Overview](https://github.com/clstaub/Predicting_Hospital_Readmissions#data-overview)
-- [Data Preprocessing](https://ithub.com/clstaub/Predicting_Hospital_Readmissions#data-preprocessing)
+- [Data Preprocessing](https://github.com/clstaub/Predicting_Hospital_Readmissions#data-preprocessing)
 - [Exploratory Data Analysis](https://github.com/clstaub/Predicting_Hospital_Readmissions#exploratory-data-analysis)
 - [Feature Engineering](https://github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
 - [Model Selection](https://github.com/clstaub/Predicting_Hospital_Readmissions#model-selection)
@@ -24,7 +24,8 @@ This has still proven to be a difficult task but hospitals are employing a numbe
 - Data Preprocessing
 - Exploratory Data Analysis
 - Hypothesis Testing
-
+- Feature Engineering
+- Classification Models
 
 ## Data Overview
 
