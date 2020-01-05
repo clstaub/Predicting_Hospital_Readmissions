@@ -58,7 +58,6 @@ Below is the proportion of patients in the dataset that were readmitted. The key
 - Synthetically oversampling the minority class (SMOTE)
 - Undersampling the majority class 
 
-
 <img src="img/target.png">
 
 Taking a cursory glance at the data showed that a '?' was used where values were unknown. To address this, we will replace all '?' with np.nan. This will paint a more honest picture of any missing values. 

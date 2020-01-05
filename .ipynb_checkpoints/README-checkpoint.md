@@ -1,18 +1,34 @@
-# Predicting_Hospital_Readmissions
-### Claudio Staub
+# Predicting Hospital Readmissions
+by Claudio Staub
 
+## Table of Contents
+
+- [Introduction](https://github.com/clstaub/Predicting_Hospital_Readmissions#introduction)
+- [Strategy](https://github.com/clstaub/Predicting_Hospital_Readmissions#strategy)
+- [Data Overview](https://github.com/clstaub/Predicting_Hospital_Readmissions#data-overview)
+- [Data Preprocessing](https://github.com/clstaub/Predicting_Hospital_Readmissions#data-preprocessing)
+- [Exploratory Data Analysis](https://github.com/clstaub/Predicting_Hospital_Readmissions#exploratory-data-analysis)
+- [Feature Engineering](https://github.com/clstaub/Predicting_Hospital_Readmissions#feature-engineering)
+- [Model Selection](https://github.com/clstaub/Predicting_Hospital_Readmissions#model-selection)
+- [Conclusion and Next Steps](https://github.com/clstaub/Predicting_Hospital_Readmissions#conclusion-and-next-steps)
 
 ## Introduction
+
 With estimated costs in the order of tens of billions per annum, hospital readmissions impose a significant financial burden on health care institutions across the nation. Up until more recent times, there was not a lot of incentive for Hospitals to reduce these readmissions. When Center for Medicares and Medicaid Services began public reporting hospital readmission rates, the ethical and professional incentive was there, but hospitals that aimed to reduce readmissions were losing revenue unless they could fill their beds. Enter the Hospital Readmissions Reduction Program (HRRP) circa 2013 which provided financial incentive for Hospitals to reduce readmissions. 
 
 This has still proven to be a difficult task but hospitals are employing a number of strategies to reduce the preventable readmissions. Progress has been made since the implementation of the HRRP but estimates of readmissions that could have been prevented are still as high as 70%. It is therefore in their best interest to find ways to further reduce this undesirable outcome. 
 
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
 ## Strategy
 
 - Data Preprocessing
 - Exploratory Data Analysis
 - Hypothesis Testing
+- Feature Engineering
+- Classification Models
+
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
 
 ## Data Overview
@@ -26,13 +42,14 @@ The data set was made available by Virgina Commonwealth University via the UCI M
 - Basic demographics: Encounter ID, Patient #, Race, Gender, Age, Weight
 - Medical Hx: Medications, # of Procedures, # Medications, 
 
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
 ## Data Preprocessing
 
 The metric of interest that labels whether a patient was readmitted or not has three possible values: 
 
 - **<30** : Patients that were readmitted in less than thirty days. 
-- **>30** : Paitents that were readmitted in greater than thirty days. 
+- **>30** : Patients that were readmitted in greater than thirty days. 
 - **NO** : Patients that were not readmitted
 
 The metric of concern according to the HRRP is patients that were readmitted in less than thirty days. Therefore we will rename the column to 'readmitted_<30d' and combine the '>30' and 'NO'.
@@ -70,6 +87,8 @@ Furthermore, there are some observations with discharge_disposition_id that will
 Based on these criteria, we will remove records where
 discharge_disposition_id = 11,13,14,18,19,20,21
 
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
+
 ## Exploratory Data Analysis
 It is worth exploring if any of the numeric variables have any correlations. We will write a function to exract numeric columns from a data frame of choice and return a numeric data frame. This will be performed for both the 
 
@@ -80,16 +99,13 @@ Extraction of numeric columns and plotting in a pairplot did not yield any stron
 We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
 
 <img src='img/inpatient_visits.png'>
-<img src='img/hospital_days.png'>
-<img src='img/lab_procedures.png'>
-<img src='img/procedures.png'>
-<img src='img/num_meds.png'>
-<img src='img/outpatient.png'>
-<img src='img/ER.png'>
+
 
 Reviewing the histograms, we can not appreciate any predictive power in these variables. 
 
 A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
+
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
 ## Hypothesis Testing
 
@@ -97,7 +113,7 @@ Since the columns in this dataset are largely categorical variables, we want to 
 
 As there are various mechanisms of action by which diabetes medication can treat the disease, there are many medications on the market. This can be seen by the 23 various diabetes medications that are included in this data set. Finding the optimal medication for each patient can often be an exercise of trial and error. Adverse side-effects secondary to a medication change often result in hospitalization as patients need to be monitored with serial blood glucose tests. 
 
-I'd like to test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward Chi-Squared test. 
+Let's test the change in medication column and the readmission column for independence. Since these both only contain two possible values, this would be a fairly straight forward Chi-Squared test. 
 
 #### State Null and Alternative Hypothesis
 
@@ -113,7 +129,32 @@ I'd like to test the change in medication column and the readmission column for 
 - The groups being tested must be independent
 - The value of expected cells should be greater than 5 for at least 20% of the cells
 
-Credit to [this](https://pythonfordatascience.org/chi-square-test-of-independence-python/) medium article
-
 #### Results
+A Chi-Squared test result of 38.5 with 1 degree of freedom yields a p-value of 5.37 * e-10, which means reject the Null Hypothesis. Changes in medicine and hospital readmissions are not independent. Further Post-Hoc Analysis can be performed. 
+
+## Feature Engineering
+Due to the imbalanced nature of this data set, we will need to implement some oversampling or undersampling techniques. A tried and tested method is Synthetic Minority Oversampling Technique (SMOTE).  This technique draws lines between the existing minority cluster via KNN and generates data points on those lines until the dataset is balanced. 
+An example of an undersampling technique is NearMiss. This technique undersamples the majority class so that the two classes are equal in size. The trade-off with this is the potential loss of data but we reduce the risk of overfitting our model to the data. 
+
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
+
+## Model Selection
+
+
+
+
+
+
+
+
+
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
+
+## Conclusions and Next Steps
+
+
+
+
+
+[Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
