@@ -58,7 +58,6 @@ Below is the proportion of patients in the dataset that were readmitted. The key
 - Synthetically oversampling the minority class (SMOTE)
 - Undersampling the majority class 
 
-
 <img src="img/target.png">
 
 Taking a cursory glance at the data showed that a '?' was used where values were unknown. To address this, we will replace all '?' with np.nan. This will paint a more honest picture of any missing values. 
@@ -99,6 +98,12 @@ Extraction of numeric columns and plotting in a pairplot did not yield any stron
 We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
 
 <img src='img/inpatient_visits.png'>
+<img src='img/ER.png'>
+<img src='img/hospital_days.png'>
+<img src='img/inpatient_visits.png'>
+<img src='img/lab_procedures.png'>
+<img src='img/num_meds.png'>
+<img src='img/outpatient.png'>
 
 
 Reviewing the histograms, we can not appreciate any predictive power in these variables. 
