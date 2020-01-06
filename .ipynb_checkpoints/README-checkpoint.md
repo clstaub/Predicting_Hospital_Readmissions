@@ -98,12 +98,22 @@ Extraction of numeric columns and plotting in a pairplot did not yield any stron
 We should also evaluate if the distributions of the continuous variables have any predictive power in classifying readmitted vs. non-readmitted patients. 
 
 <img src='img/inpatient_visits.png'>
+
 <img src='img/ER.png'>
+
 <img src='img/hospital_days.png'>
-<img src='img/inpatient_visits.png'>
+
 <img src='img/lab_procedures.png'>
+
 <img src='img/num_meds.png'>
+
 <img src='img/outpatient.png'>
+
+|Test|
+:-------------------------:|:-------------------------:
+![](img/inpatient_visits.png)  |  ![](img/lab_procedures.png) 
+![](img/ER.png)                |  ![](img/num_meds.png)
+![](img/hospital_days.png)     |  ![](img/outpatient.png)
 
 
 Reviewing the histograms, we can not appreciate any predictive power in these variables. 

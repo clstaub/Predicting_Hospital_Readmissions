@@ -14,9 +14,9 @@ by Claudio Staub
 
 ## Introduction
 
-With estimated costs in the order of tens of billions per annum, hospital readmissions impose a significant financial burden on health care institutions across the nation. Up until more recent times, there was not a lot of incentive for Hospitals to reduce these readmissions. When Center for Medicares and Medicaid Services began public reporting hospital readmission rates, the ethical and professional incentive was there, but hospitals that aimed to reduce readmissions were losing revenue unless they could fill their beds. Enter the Hospital Readmissions Reduction Program (HRRP) circa 2013 which provided financial incentive for Hospitals to reduce readmissions. 
+With estimated costs in the order of tens of billions per annum, hospital readmissions impose a significant financial burden on health care institutions across the nation. Until more recent times, there was not a lot of incentive for Hospitals to reduce these readmissions. When Center for Medicare and Medicaid Services began public reporting hospital readmission rates, the ethical and professional incentive was there, but hospitals that aimed to reduce readmissions were losing revenue unless they could fill their beds. Enter the Hospital Readmissions Reduction Program (HRRP) circa 2013 which provided financial incentive for Hospitals to reduce readmissions. 
 
-This has still proven to be a difficult task but hospitals are employing a number of strategies to reduce the preventable readmissions. Progress has been made since the implementation of the HRRP but estimates of readmissions that could have been prevented are still as high as 70%. It is therefore in their best interest to find ways to further reduce this undesirable outcome. 
+This has still proven to be a difficult task but hospitals are employing a number of strategies to reduce the preventable readmissions. Progress has been made since the implementation of the HRRP but estimates of readmissions that could have been prevented are still as high as 70%. It is therefore of relevance to find ways to further mitigate this undesirable outcome. 
 
 [Back to top](https://github.com/clstaub/Predicting_Hospital_Readmissions#Predicting-Hospital-Readmissions)
 
@@ -109,8 +109,14 @@ We should also evaluate if the distributions of the continuous variables have an
 
 <img src='img/outpatient.png'>
 
+|Test|
+:-------------------------:|:-------------------------:
+![](img/inpatient_visits.png)  |  ![](img/lab_procedures.png) 
+![](img/ER.png)                |  ![](img/num_meds.png)
+![](img/hospital_days.png)     |  ![](img/outpatient.png)
 
-Reviewing the histograms, we can not appreciate any predictive power in these variables. 
+
+Reviewing the histograms, we can not appreciate strong predictive power or signal in these variables. 
 
 A good next step would be to evaluate the unique values that each feature contains. If the feature contains a large amount of values (i.e. Patient ID, encounter ID) we will just take a count of the unique values in the column.
 
